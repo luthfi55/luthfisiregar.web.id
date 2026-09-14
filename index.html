@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luthfi Siregar — Software Engineer</title>
+<meta name="description" content="Luthfi Siregar — Software Engineer based in Jakarta. Backend & Full-stack: Go, .NET, React, PHP/Laravel. ERP, Dynamics GP, REST API.">
+<meta name="author" content="Luthfi Siregar">
+<link rel="canonical" href="https://luthfisiregar.web.id/">
+<meta property="og:title" content="Luthfi Siregar — Software Engineer">
+<meta property="og:description" content="Software Engineer — Backend & Full-stack. Go, .NET, React, Dynamics GP. Jakarta, Indonesia.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://luthfisiregar.web.id/">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:,">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,700;9..144,1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  :root{--bg:#fcfcfc;--fg:#111;--mut:#6e6e6e;--line:#e9e9e9;--card:#ffffff;--radius:18px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font:15px/1.65 Inter,system-ui,sans-serif;color:var(--fg);background:var(--bg);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .progress{position:fixed;top:0;left:0;height:3px;background:var(--fg);width:100%;transform:scaleX(0);transform-origin:left;z-index:9999}
+  /* header */
+  .topbar{position:sticky;top:0;z-index:10;background:color-mix(in srgb, var(--bg) 86%, transparent);backdrop-filter:blur(10px) saturate(1.15);border-bottom:1px solid var(--line)}
+  .topbar-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+  .brand{font-family:JetBrains Mono,monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+  .brand b{font-weight:700}
+  .nav a{font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);text-decoration:none;margin-left:20px}
+  .nav a:hover{color:var(--fg)}
+  .nav a.active{color:var(--fg);text-decoration:underline;text-underline-offset:4px}
+  /* layout split */
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px 64px;display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:start}
+  .left{position:sticky;top:72px;padding-top:36px}
+  .eyebrow{font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+  .left h1{font-family:Fraunces,serif;font-size:48px;line-height:.92;letter-spacing:-.04em;font-weight:700;margin-top:10px}
+  .left h1 i{font-weight:700;color:var(--fg)}
+  .left .role{font-size:15px;color:var(--mut);margin-top:12px;line-height:1.6}
+  .left .role strong{color:var(--fg);font-weight:600}
+  .cta{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+  .btn{font-family:Inter,sans-serif;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:13px;font-weight:600;text-decoration:none;background:var(--card)}
+  .btn.primary{background:var(--fg);color:#fff;border-color:var(--fg)}
+  .btn.ghost{background:transparent}
+  .btn:hover{transform:translateY(-1px)}
+  .btn,.card{transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease}
+  .left-card{margin-top:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:16px}
+  .left-card .k{font-family:JetBrains Mono,monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+  .left-card h3{font-size:14px;margin:6px 0 4px}
+  .left-card p{font-size:13px;color:var(--mut);line-height:1.6}
+  .left-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .pill{font-family:JetBrains Mono,monospace;font-size:11px;border:1px solid var(--line);border-radius:999px;padding:4px 9px;background:#fff;color:var(--mut)}
+  .left-links{margin-top:18px;display:flex;gap:14px}
+  .left-links a{font-size:13px;color:var(--mut);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
+  .left-links a:hover{color:var(--fg);border-color:var(--fg)}
+  /* right */
+  .right{padding-top:36px;min-width:0}
+  .section-head{scroll-margin-top:84px}
+  .section-head{display:flex;align-items:baseline;gap:12px;margin:36px 0 14px;padding-top:18px;border-top:1px solid var(--line)}
+  .section-head:first-child{margin-top:0}
+  .snum{font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.1em;color:var(--mut)}
+  .stitle{font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+  /* timeline */
+  .timeline{position:relative;padding-left:22px}
+  .timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line)}
+  .titem{position:relative;padding:14px 14px;margin-left:8px;border:1px solid transparent;border-radius:14px;cursor:pointer;transition:background .2s ease, border-color .2s ease, transform .2s ease}
+  .titem::before{content:"";position:absolute;left:-19px;top:22px;width:7px;height:7px;border-radius:50%;background:var(--fg);box-shadow:0 0 0 4px var(--bg);border:1px solid var(--line)}
+  .titem:hover{background:var(--card);border-color:var(--line);transform:translateX(2px);box-shadow:0 8px 18px rgba(0,0,0,.04)}
+  .row{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+  .role{font-weight:650;font-size:14px}
+  .org{color:var(--mut);font-weight:500;font-size:13px}
+  .when{font-family:JetBrains Mono,monospace;font-size:11px;color:var(--mut);white-space:nowrap;border:1px solid var(--line);border-radius:999px;padding:3px 9px;background:#fff}
+  .desc{color:#2b2b2b;margin-top:6px;max-width:62ch;font-size:13.5px;line-height:1.65}
+  .tags{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+  .tag{font-family:JetBrains Mono,monospace;font-size:10.5px;letter-spacing:.02em;border:1px solid var(--line);border-radius:999px;padding:3px 8px;color:var(--mut);background:#fff}
+  /* projects editorial */
+  .plist{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
+  .prow{display:grid;grid-template-columns:52px 1fr 22px;gap:12px;padding:18px 16px;align-items:start;cursor:pointer;border-bottom:1px solid var(--line)}
+  .prow:last-child{border-bottom:none}
+  .prow:hover{background:color-mix(in srgb, var(--line) 28%, transparent)}
+  .pnum{font-family:JetBrains Mono,monospace;font-size:11px;color:var(--mut);letter-spacing:.08em;padding-top:3px}
+  .pname{font-size:16px;font-weight:700;letter-spacing:-.02em}
+  .pdesc{font-size:13px;color:var(--mut);margin-top:4px;line-height:1.6;max-width:56ch}
+  .parrow{font-size:16px;color:var(--mut);padding-top:2px;transition:transform .18s ease;line-height:1}
+  .prow:hover .parrow{transform:translateX(3px);color:var(--fg)}
+  /* skills */
+  .skills-card{border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+  .skill-row{display:grid;grid-template-columns:132px 1fr;gap:16px;padding:16px 18px;align-items:start}
+  .skill-row + .skill-row{border-top:1px solid var(--line)}
+  .skill-label{font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);display:flex;align-items:center;gap:8px;padding-top:6px;white-space:nowrap}
+  .skill-label::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--fg);opacity:.95;flex-shrink:0}
+  .skill-row:nth-child(2) .skill-label::before{opacity:.5}
+  .skill-row:nth-child(3) .skill-label::before{opacity:.3}
+  .pill-wrap{display:flex;gap:7px;flex-wrap:wrap}
+  .pill{transition:border-color .15s ease, transform .15s ease}
+  .pill:hover{border-color:#c9c9c9;transform:translateY(-1px);color:var(--fg)}
+  /* contact */
+  .contact-card{border:1px solid var(--line);border-radius:16px;background:var(--card);padding:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+  .contact-card p{font-size:14px;color:#2b2b2b}
+  /* modal */
+  .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;z-index:50;visibility:hidden;pointer-events:none}
+  .modal.open{visibility:visible;pointer-events:auto}
+  .modal-bg{position:absolute;inset:0;background:rgba(18,18,18,.42);backdrop-filter:blur(8px);opacity:0;transition:opacity .3s ease}
+  .modal.open .modal-bg{opacity:1}
+  .modal-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;max-width:560px;width:100%;padding:22px;box-shadow:0 20px 40px rgba(0,0,0,.14);max-height:82vh;overflow:auto;opacity:0;transform:translateY(10px) scale(.97);transition:opacity .34s ease, transform .34s cubic-bezier(.22,.61,.36,1)}
+  .modal.open .modal-card{opacity:1;transform:none}
+  .modal-card h3{font-size:18px;letter-spacing:-.02em}
+  .modal-card .mut{font-family:JetBrains Mono,monospace;font-size:11px;color:var(--mut);margin-top:4px;letter-spacing:.04em}
+  .modal-card p{font-size:14px;line-height:1.65;color:#2b2b2b;margin-top:12px}
+  .modal-close{position:absolute;top:12px;right:12px;border:1px solid var(--line);background:#fff;border-radius:999px;width:32px;height:32px;display:grid;place-items:center;cursor:pointer}
+  footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-family:JetBrains Mono,monospace;font-size:11px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;letter-spacing:.04em}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr;gap:0}.left{position:static}.left h1{font-size:40px}}
+  @media(max-width:560px){.topbar-inner{padding:12px 16px}.wrap{padding:0 16px 48px}.left h1{font-size:34px}.skill-row{grid-template-columns:1fr;gap:10px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Luthfi Siregar","url":"https://luthfisiregar.web.id/","jobTitle":"Software Engineer","address":{"@type":"PostalAddress","addressLocality":"Jakarta","addressCountry":"ID"},"sameAs":["https://id.linkedin.com/in/luthfisiregar","https://github.com/luthfi55"],"email":"mailto:luthfi12354@gmail.com"}
+</script>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="topbar"><div class="topbar-inner"><div class="brand"><b>Luthfi</b> Siregar — Portfolio</div><nav class="nav"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a><a href="#skills">Skills</a></nav></div></div>
+<div class="wrap">
+  <aside class="left">
+    <div class="eyebrow">Software Engineer · Jakarta, ID</div>
+    <h1>Luthfi<br><i>Siregar</i></h1>
+    <p class="role">Backend & ERP — <strong>Go · .NET · React</strong><br>Building integrated systems on Dynamics GP at Artha IT Group. Real-time sync across departments.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://id.linkedin.com/in/luthfisiregar" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/luthfi55" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn ghost" href="mailto:luthfi12354@gmail.com">Email</a>
+    </div>
+    <div class="left-card">
+      <div class="k">Currently</div>
+      <h3>Software Programmer @ Artha IT Group</h3>
+      <p>Dynamics GP + web ERP — C++, React, .NET. End-to-end business processes.</p>
+      <div class="left-meta"><span class="pill">GPA 3.68 Cum Laude</span><span class="pill">Telkom University</span></div>
+    </div>
+    <div class="left-links"><a href="https://id.linkedin.com/in/luthfisiregar" target="_blank" rel="noopener">linkedin.com/in/luthfisiregar</a><a href="https://github.com/luthfi55" target="_blank" rel="noopener">github.com/luthfi55</a></div>
+  </aside>
+  <main class="right">
+    <div class="section-head" id="experience"><span class="snum">01</span><span class="stitle">Experience</span></div>
+    <div class="timeline">
+      <div class="titem" data-e="0"><div class="row"><div><span class="role">Software Programmer</span> <span class="org">— PT Artha Infotama</span></div><div class="when">Jan 2025 — Present</div></div><p class="desc">Building ERP on Dynamics GP + web ERP (C++, React, .NET). Real-time sync across departments.</p><div class="tags"><span class="tag">C++</span><span class="tag">React</span><span class="tag">.NET</span><span class="tag">Dynamics GP</span></div></div>
+      <div class="titem" data-e="1"><div class="row"><div><span class="role">Back End Developer</span> <span class="org">— Telkom DBT</span></div><div class="when">Mar — Aug 2023</div></div><p class="desc">Dynamic API builder in Go on Telkom codebase. Backend fundamentals & API design.</p><div class="tags"><span class="tag">Go</span><span class="tag">REST API</span></div></div>
+      <div class="titem" data-e="2"><div class="row"><div><span class="role">Fullstack Developer</span> <span class="org">— Cerebrum Edukanesia</span></div><div class="when">Jun — Aug 2023</div></div><p class="desc">Sharia-compliant lending platform (BMT) — Laravel + Midtrans.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">PHP</span></div></div>
+      <div class="titem" data-e="3"><div class="row"><div><span class="role">Web Developer</span> <span class="org">— DILO Balikpapan</span></div><div class="when">Jun — Sep 2018</div></div><p class="desc">SME marketplace for Balikpapan — Laravel, product flows for SMEs.</p><div class="tags"><span class="tag">PHP</span><span class="tag">Laravel</span></div></div>
+    </div>
+    <div class="section-head"><span class="snum">02</span><span class="stitle">Education</span></div>
+    <div class="timeline">
+      <div class="titem" style="cursor:default"><div class="row"><div><span class="role">Telkom University</span> <span class="org">— B.C.S Software Engineering, Cum Laude 3.68</span></div><div class="when">2020 — 2024</div></div></div>
+      <div class="titem" style="cursor:default"><div class="row"><div><span class="role">SMK Negeri 2 Balikpapan</span> <span class="org">— Software Engineering</span></div><div class="when">2016 — 2020</div></div></div>
+    </div>
+    <div class="section-head" id="projects"><span class="snum">03</span><span class="stitle">Projects</span></div>
+    <div class="plist">
+      <div class="prow" data-p="0"><div class="pnum">01</div><div><div class="pname">Sahabat CGI</div><div class="pdesc">REST API for LGK patient data — Go + Gin. Doctor/admin monitoring.</div><div class="tags" style="margin-top:8px"><span class="tag">Go</span><span class="tag">Gin</span><span class="tag">REST API</span></div></div><div class="parrow">→</div></div>
+      <div class="prow" data-p="1"><div class="pnum">02</div><div><div class="pname">Axtorix</div><div class="pdesc">Artist job marketplace — profiles, listings, applications. Laravel.</div><div class="tags" style="margin-top:8px"><span class="tag">Laravel</span><span class="tag">PHP</span></div></div><div class="parrow">→</div></div>
+      <div class="prow" data-p="2"><div class="pnum">03</div><div><div class="pname">CCLaundry</div><div class="pdesc">Laundry near Telkom University — CodeIgniter, order tracking.</div><div class="tags" style="margin-top:8px"><span class="tag">CodeIgniter</span><span class="tag">PHP</span></div></div><div class="parrow">→</div></div>
+    </div>
+    <div class="section-head" id="skills"><span class="snum">04</span><span class="stitle">Skills</span></div>
+    <div class="skills-card">
+      <div class="skill-row"><div class="skill-label">Backend</div><div class="pill-wrap"><span class="pill">Go</span><span class="pill">Gin</span><span class="pill">PHP</span><span class="pill">Laravel</span><span class="pill">CodeIgniter</span><span class="pill">REST API</span><span class="pill">MySQL</span><span class="pill">PostgreSQL</span></div></div>
+      <div class="skill-row"><div class="skill-label">Frontend</div><div class="pill-wrap"><span class="pill">React</span><span class="pill">JavaScript</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">.NET</span></div></div>
+      <div class="skill-row"><div class="skill-label">Infra & Tools</div><div class="pill-wrap"><span class="pill">Docker</span><span class="pill">MongoDB</span><span class="pill">GitLab</span><span class="pill">Dynamics GP</span><span class="pill">Flutter</span></div></div>
+    </div>
+    <div class="section-head"><span class="snum">05</span><span class="stitle">Contact</span></div>
+    <div class="contact-card" id="contact"><p>Jakarta · <a href="mailto:luthfi12354@gmail.com">luthfi12354@gmail.com</a> · 0895-3399-17334</p><div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn" href="https://id.linkedin.com/in/luthfisiregar" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/luthfi55" target="_blank" rel="noopener">GitHub</a></div></div>
+    <footer><span>© 2026 Luthfi Siregar</span><span><a href="/sitemap.xml">sitemap</a> · <a href="/robots.txt">robots</a></span></footer>
+  </main>
+</div>
+<div class="modal" id="modal" aria-hidden="true"><div class="modal-bg" id="modalBg"></div><div class="modal-card"><button class="modal-close" id="modalClose" aria-label="Close">×</button><h3 id="mTitle"></h3><div class="mut" id="mMeta"></div><p id="mDesc"></p><div class="tags" id="mTags" style="margin-top:12px"></div></div></div>
+<script>
+const projects=[
+  {title:"Sahabat CGI",meta:"Feb 2024 — Sep 2024 · Backend · Go + Gin",desc:"Backend REST API for the Sahabat CGI community to manage LGK cancer patient data. Designed for doctors and admins to monitor patient progress. Structured data entry, auth, and REST endpoints for the mobile app. Built as final university project.",tags:["Go","Gin","REST API","MySQL"]},
+  {title:"Axtorix",meta:"Sep 2023 — Dec 2023 · Web · Laravel",desc:"Artist job marketplace — profiles, job search, and applications. Dedicated space for creatives to connect with employers. User-friendly interface and backend for listings and employer–artist interactions.",tags:["Laravel","PHP","MySQL"]},
+  {title:"CCLaundry",meta:"Jun 2022 — Dec 2022 · Web · CodeIgniter",desc:"Laundry service website around Telkom University. Order tracking for ongoing laundry, built with CodeIgniter and designed for daily operations.",tags:["CodeIgniter","PHP","MySQL"]},
+];
+const experiences=[
+  {title:"Software Programmer — PT Artha Infotama",meta:"Jan 2025 — Present · Jakarta · Artha IT Group",desc:"Building ERP on Dynamics GP + web ERP (C++, React, .NET). Real-time sync across departments, business process automation, and seamless data flow for enterprise operations.",tags:["C++","React",".NET","Dynamics GP","JavaScript"]},
+  {title:"Back End Developer — Telkom DBT",meta:"Mar 2023 — Aug 2023 · Bandung",desc:"Built a dynamic API builder in Go on top of Telkom's internal codebase. Intensive backend fundamentals, API design, and collaboration in a teaching-factory environment.",tags:["Go","REST API"]},
+  {title:"Fullstack Developer — Cerebrum Edukanesia",meta:"Jun 2023 — Aug 2023 · Bandung",desc:"Built a sharia-compliant lending platform (BMT) with Laravel and Midtrans. Transaction management aligned with Islamic finance principles.",tags:["PHP","Laravel","MySQL","Midtrans"]},
+  {title:"Web Developer — DILO Balikpapan",meta:"Jun 2018 — Sep 2018",desc:"Built an SME marketplace for Balikpapan — Laravel backend, frontend design, and product flows for SMEs.",tags:["PHP","Laravel"]},
+];
+const modal=document.getElementById('modal'),mTitle=document.getElementById('mTitle'),mMeta=document.getElementById('mMeta'),mDesc=document.getElementById('mDesc'),mTags=document.getElementById('mTags');
+function showModal(d){mTitle.textContent=d.title;mMeta.textContent=d.meta;mDesc.textContent=d.desc;mTags.innerHTML=d.tags.map(t=>`<span class="tag">${t}</span>`).join('');modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function openModal(i){showModal(projects[i])}
+function openExp(i){showModal(experiences[i])}
+function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+document.querySelectorAll('.prow').forEach(r=>r.addEventListener('click',()=>openModal(r.dataset.p)));
+document.querySelectorAll('.titem[data-e]').forEach(r=>r.addEventListener('click',()=>openExp(r.dataset.e)));
+document.getElementById('modalBg').addEventListener('click',closeModal);
+document.getElementById('modalClose').addEventListener('click',closeModal);
+addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+const bar=document.getElementById('progress');
+const onScroll=()=>{const h=document.documentElement;const p=(h.scrollTop)/(h.scrollHeight-h.clientHeight||1);bar.style.transform=`scaleX(${p})`};
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+</script>
+</body>
+</html>
